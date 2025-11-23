@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+    <script type="module" src="popup.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>URL Redirector</h1>
+
+        <div class="add-rule-section">
+            <h2>Add New Rule</h2>
+            <div class="form-group">
+                <label>Pattern (Regex):</label>
+                <input type="text" id="newPattern" placeholder="e.g., https://old-domain\.com(/.*)" class="validation-input">
+                <div id="patternError" class="error-message"></div>
+                <div id="patternSuccess" class="success-message"></div>
+            </div>
+            <div class="form-group">
+                <label>Replacement:</label>
+                <input type="text" id="newReplacement" placeholder="e.g., https://new-domain.com$1" class="validation-input">
+            </div>
+            <div class="form-group">
+                <label>Flags:</label>
+                <input type="text" id="newFlags" value="gi" placeholder="e.g., gi" class="validation-input">
+                <div id="flagsError" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label>Test URL (optional):</label>
+                <input type="text" id="testUrl" placeholder="e.g., https://old-domain.com/path/123">
+                <div id="testResult" class="test-result"></div>
+            </div>
+            <button id="addRuleBtn">Add Rule</button>
+        </div>
+
+        <div class="rules-section">
+            <h2>Active Rules</h2>
+            <div id="rulesList"></div>
+            <div id="noRules" class="no-rules">No rules configured yet.</div>
+        </div>
+    </div>
+</body>
+</html>
